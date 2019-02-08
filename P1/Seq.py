@@ -2,8 +2,7 @@ class Seq:
     strbases: object
 
     def __init__(self, strbases):
-        print("New sequence created")
-
+        print("Sequence {} created properly".format(strbases))
         self.strbases = strbases
 
     def len(self):
@@ -28,10 +27,21 @@ class Seq:
                 counter += 1
         return counter
 
-    def perc(base):
+    def perc(self, base):
+        tl = 0
+        counter = 0
+        for i in self.strbases:
+            tl += 1
+            if i == base:
+                counter += 1
         if tl > 0:
-           perce = round(100.0 * counter / tl, 1)
+            percentage = round(100.0 * counter / tl, 1)
+            return percentage
         else:
             print("Can't calculate percentages with 0 length")
+            return 0
+
+
+
 
 
