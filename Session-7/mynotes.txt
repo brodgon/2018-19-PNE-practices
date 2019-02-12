@@ -1,0 +1,35 @@
+Here I will take my notes!!
+
+Creates a program which generates communication between a client and a server.
+
+The client starts the communication asking something to the server and the server response.Servers can attend several clients.
+If there are no clients, the server will wait until some client connect.
+If a client wants to access a server, and a server cannot attend (is "down"), connection between server and client is impossible.
+ALWAYS RUN SERVER FIRST!
+
+One computer can be a server and a client, both at the same time!
+
+Servers and clients communicate through a network, the internet. Inside the internet we can find many isolated computers.
+Computer are grouped in networks, connected among others.
+All computers connected to the internet (and among each other) have IP addresses. IP changes depending on the computer you are connected to.
+However it doesn't matter which IP address you have , you will reach to the same final point.
+    Ex: My phone IP address is: 10.0.46.231
+    Ex: My computer IP address is: 212.128.253.93
+    Ex: The teacher's IP is: 212.128.253.64
+
+There is a command called ping, which sends a kind of question to a server and wait for responses.
+    Ex: ping time to 8.8.8.8: time=3.26 ms--- (64 bytes from 8.8.8.8: icmp_seq=1 ttl=121)
+    Ex:ping time to my computer: time=0.045 ms----(64 bytes from 212.128.253.93: icmp_seq=2 ttl=64)
+    Ex: ping time to Sergio's computer (right):time=0.368 ms--- (64 bytes from 212.128.253.94: icmp_seq=1 ttl=64)
+    Ex: ping time to my phone: time=5.98 ms---
+
+URL: Identifying a computer interface for humans [ex: www.]
+    *   Ping time to google: time=3.70 ms   *
+    When you ping a web page you get the url and the ip:
+        PING www.google.com (216.58.211.228) 56(84) bytes of data.
+    *   Ping to urjc.es: PING www.urjc.es (212.128.240.50) 56(84) bytes of data.
+                         64 bytes from www.urjc.es (212.128.240.50): icmp_seq=1 ttl=253 time=2.09 ms    *
+
+Port: Number which indicates the position for a specific server. You need this number to connect, if you do not have it you cannot connect.
+
+THIS IS TEXT WRITTEN FROM A PROGRAM TO MY FILE!THIS IS TEXT WRITTEN FROM A PROGRAM TO MY FILE!THIS IS TEXT WRITTEN FROM A PROGRAM TO MY FILE!
