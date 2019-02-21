@@ -1,7 +1,7 @@
 import socket
 
 
-PORT = 8095
+PORT = 8098
 IP = "212.128.253.106"
 
 
