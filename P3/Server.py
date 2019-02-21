@@ -1,7 +1,7 @@
 import socket
 from Seq import Seq
 
-PORT = 8095
+PORT = 8098
 IP =  "212.128.253.106"
 MAX_OPEN_REQUEST = 5
 
@@ -12,19 +12,74 @@ def process_client(cs):
     print(mess)
     if mess == " ":
         msg = "ALIVE"
-        print(msg)
         cs.send(str.encode(msg))
     else:
-        hello = mess.split("\n")
-        print(hello)
-        seq1 = Seq(hello[0])
-        for i in range(len(hello)):
-            if hello[i] == "len":
-                tl = seq1.len()
-                msg = "The total length is "+str(tl)
-                cs.send(str.encode(msg))
+        rlist = mess.split("\n")
+        seq = rlist[0].upper()
+        validation(seq)
+        if validation(seq):
+            seq1 = Seq(seq)
+            rlist.pop(0)
+            for i in range(len(rlist)):
+                if rlist[i] == "len":
+                    tl = seq1.len()
+                    msg = "The total length is "+str(tl)+"\n"
+                    cs.send(str.encode(msg))
+                elif rlist[i] == "complement":
+                    comp = seq1.complement()
+                    msg = "The complement sequence for the introduced one is:"+comp+"\n"
+                    cs.send(str.encode(msg))
+                elif rlist[i] == "reverse":
+                    rev = seq1.reverse()
+                    msg = "The reversed sequence for the introduced one is:" + rev + "\n"
+                    cs.send(str.encode(msg))
+                elif rlist[i] == "countA":
+                    counter = seq1.strbases.count("A")
+                    msg = "The number of As in your sequence is:" + str(counter) + "\n"
+                    cs.send(str.encode(msg))
+                elif rlist[i] == "countT":
+                    counter = seq1.strbases.count("T")
+                    msg = "The number of Ts in your sequence is:" + str(counter) + "\n"
+                    cs.send(str.encode(msg))
+                elif rlist[i] == "countG":
+                    counter = seq1.strbases.count("G")
+                    msg = "The number of Gs in your sequence is:" + str(counter) + "\n"
+                    cs.send(str.encode(msg))
+                elif rlist[i] == "countC":
+                    counter = seq1.strbases.count("C")
+                    msg = "The number of Cs in your sequence is:" + str(counter) + "\n"
+                    cs.send(str.encode(msg))
+                elif rlist[i] == "percA":
+                    perc = seq1.strbases.perc("A")
+                    msg = "The percentage of Cs in your sequence is:" + str(perc) + "\n"
+                    cs.send(str.encode(msg))
+                elif rlist[i] == "percT":
+                    perc = seq1.strbases.perc("T")
+                    msg = "The percentage of Ts in your sequence is:" + str(perc) + "\n"
+                    cs.send(str.encode(msg))
+                elif rlist[i] == "percG":
+                    perc = seq1.strbases.perc("G")
+                    msg = "The percentage of Gs in your sequence is:" + str(perc) + "\n"
+                    cs.send(str.encode(msg))
+                elif rlist[i] == "percC":
+                    perc = seq1.strbases.perc("C")
+                    msg = "The percentage of Cs in your sequence is:" + str(perc) + "\n"
+                    cs.send(str.encode(msg))
+                elif rlist[i] == '':
+                    pass
+                else:
+                    msg = "ERROR! This operation cannot be held"
+                    cs.send(str.encode(msg))
 
 
+def validation(seq):
+    valid = "ACTG"
+    for letter in seq:
+        if letter not in valid:
+            MSG = "Letter " + letter + " not valid." + "\n"
+            clientsocket.send(str.encode(MSG))
+            return False
+    return True
 
 
 # Create a socket for connecting to the clients
@@ -45,4 +100,5 @@ while True:
     print("Attending  client: {}".format(address))
     process_client(clientsocket)
     # --- Close the socket
+    clientsocket.close()
 
