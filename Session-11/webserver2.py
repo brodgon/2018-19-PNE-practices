@@ -32,9 +32,9 @@ def process_client(cs):
         <meta charset="utf-8">
         <title>Pink server</title>
       </head>
-      <body style="background-color: pink;">
+      <body style="background-color: MediumVioletRed;">
         <h1>Pink server</h1>
-        <p>I am the super cute pink server! <3 </p>
+        <p>I am the strong and rebel pink server! <3 </p>
       </body>
     </html>
     """
