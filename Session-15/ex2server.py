@@ -25,12 +25,12 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
                 with open("ex2redirect.html", "r") as f:
                     echo_mess = capital[capital.find("=")+1:]
                     contents = f.read().format(echo_mess)
-
-
+                    f.close()
             else:
                 with open("ex2redirect.html", "r") as f:
                     echo_mess = self.path[self.path.find("=")+1:]
                     contents = f.read().format(echo_mess)
+                    f.close()
         else:
             with open("error.html", "r") as c:
                 contents = c.read()
