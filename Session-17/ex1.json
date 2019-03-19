@@ -1,0 +1,28 @@
+{
+  "Firstperson":[
+    {"Firstname": "Blanca"},
+    {"Lastname": "Rodríguez"},
+    {"Age": 18},
+    {"Phonenumber": [
+      {"number": "1111-1111", "type": "home"},
+      {"number": "2222-2222", "type" : "mobile"}]
+    }],
+  "Secondperson":[
+    {"Firstname": "Troll"},
+    {"Lastname": "Face"},
+    {"Age": 35},
+    {"Phonenumber": [
+      {"number": "1528-961", "type": "home"},
+      {"number": "2222-2222", "type" : "office"}]
+      }],
+  "Thirdperson":[
+    {"Firstname": "Bey"},
+    {"Lastname": "Bee"},
+    {"Age": 37},
+    {"Phonenumber": [
+      {"number": "158-96961", "type": "Dance"},
+      {"number": "2585-8582", "type" : "mobile"}]
+      }]
+
+  }
+
