@@ -45,3 +45,4 @@ cat = json.loads(text_json)
 
 # -- Print the received URL
 print("Cat image: ", cat['file'])
+
